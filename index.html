@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="contaiiner">
+      <div class="content">
+        <button id="jserror">点击抛出错误</button>
+        <button>点击抛出promsie错误</button>
+        <button>点击抛出ajax错误</button>
+        <button>点击ajax成功</button>
+        <button onclick="clickMe()">点我</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      setTimeout(()=>{
+        let content=document.getElementsByClassName('content')[0]
+        let h1=document.createElement('h1')
+        h1.innerHTML='我是页面中最有意义的内容'
+        h1.setAttribute('elementtiming','meaningful')//自己给最有意义的元素
+        content.appendChild(h1)
+      },2000)
+      
+
+      function clickMe(){
+        let start=Date.now()
+        while((Date.now()-start)<1000){}
+      }
+    </script>
+  </body>
+</html>
